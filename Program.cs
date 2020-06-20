@@ -35,11 +35,18 @@ namespace ex._4
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите E");
-            double E = double.Parse(Console.ReadLine());
-            double x0 = 0;
-            double x1 = 1;
-            Method(x0, x1, E);
+            try
+            {
+                Console.WriteLine("Введите точность E (дробное значение записывайте через 0,.....)");
+                double E = double.Parse(Console.ReadLine());
+                double x0 = 0;
+                double x1 = 1;
+                Method(x0, x1, E);
+            }
+            catch(System.FormatException)
+            {
+                Console.WriteLine("Вы ввели не число");
+            }
         }
     }
 }
